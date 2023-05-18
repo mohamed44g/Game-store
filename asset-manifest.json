@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react2/static/css/main.0ced0088.css",
-    "main.js": "/react2/static/js/main.a26704f0.js",
+    "main.css": "/react2/static/css/main.b703fd20.css",
+    "main.js": "/react2/static/js/main.12eaf40b.js",
     "static/media/ASSASSIN'S CREED VALHALLA- LAUNCH TRAILER.mp4": "/react2/static/media/ASSASSIN'S CREED VALHALLA- LAUNCH TRAILER.6204f12d00c51e430161.mp4",
     "static/media/927108.jpg": "/react2/static/media/927108.f0272ce5b6fe71493f56.jpg",
     "static/media/632759.jpg": "/react2/static/media/632759.6736ead01a474c8549f2.jpg",
@@ -20,11 +20,11 @@
     "static/media/product-8-1280x820.jpg": "/react2/static/media/product-8-1280x820.775bb203b3f9a6079720.jpg",
     "static/media/elden-ring-landscape-game-art-video-game-art-video-games-hd-wallpaper-preview.jpg": "/react2/static/media/elden-ring-landscape-game-art-video-game-art-video-games-hd-wallpaper-preview.0db0112e1c98cc0da9ae.jpg",
     "index.html": "/react2/index.html",
-    "main.0ced0088.css.map": "/react2/static/css/main.0ced0088.css.map",
-    "main.a26704f0.js.map": "/react2/static/js/main.a26704f0.js.map"
+    "main.b703fd20.css.map": "/react2/static/css/main.b703fd20.css.map",
+    "main.12eaf40b.js.map": "/react2/static/js/main.12eaf40b.js.map"
   },
   "entrypoints": [
-    "static/css/main.0ced0088.css",
-    "static/js/main.a26704f0.js"
+    "static/css/main.b703fd20.css",
+    "static/js/main.12eaf40b.js"
   ]
 }
