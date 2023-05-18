@@ -20,7 +20,7 @@ body {
     padding: 15px 0;
 
     .Nav-container {
-        width: 80%;
+        width: 76%;
         margin: 0 auto;
     }
 
@@ -43,6 +43,16 @@ body {
             &:hover {
                 border-bottom: #7a65bd 4px solid;
             }
+        }
+    }
+
+    .MenuIcon {
+        width: 35px;
+        height: 35px;
+        display: none;
+        margin-top: -2px;
+        &:hover .sidenav {
+            width: 400px;
         }
     }
 }
@@ -88,7 +98,60 @@ body {
 
 }
 
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 0;
+    background-color: #1f1c29; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.6s;
+    color: var(--home-text); /* 0.5 second transition effect to slide in the sidenav */
+  }
+
+  .side-content {
+    padding: 30px;
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    margin-bottom: 30px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+  }
+
+//   * When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    left: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .closebtn {
+    padding-top: 15px;
+    cursor: pointer;
+  }
+
+  .open-side {
+    width: 400px;
+  }
+
 .home-page {
+
     .bg {
         width: 100%;
         height: 800px;
@@ -227,8 +290,9 @@ body {
 
 .Trending, .our-products {
     .product-card {
-        width: 400px;
         overflow: hidden;
+        margin-left: auto;
+        margin-right: auto;
         .product-img {
             display: flex;
             flex-direction: column;
@@ -239,7 +303,7 @@ body {
                 width: 70px;
                 align-self: center;
                 position: relative;
-                left: -45px;
+                left: -2px;
                 top: -40px;
                 transition: .5S;
                 visibility: hidden;
@@ -256,27 +320,33 @@ body {
             }
 
             img {
-                width: 75%;
+                width: 96%;
                 height: 170px;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
 
-        .product-title {
-            text-align: start;
-            color: #7a65bd;
-            margin-top: -10px;
+        .card-text {
+            margin-left: 6px;
+            .product-title {
+                text-align: start;
+                color: #7a65bd;
+                margin-top: -10px;
+            }
+    
+            .prices {
+                .price {
+                    font-weight: 600;
+                }
+                .discount {
+                    color: #9590a8;
+                    text-decoration: line-through;
+                    margin-left: 5px;
+                }
+            }
         }
 
-        .prices {
-            .price {
-                font-weight: 600;
-            }
-            .discount {
-                color: #9590a8;
-                text-decoration: line-through;
-                margin-left: 5px;
-            }
-        }
     }
 
     .swiper-button-prev, .swiper-button-next {
@@ -295,17 +365,24 @@ body {
 
 .our-products {
     margin-top: 200px;
-
-    .product-img {
-        img {
-            width: 80%;
-        }
-    }
-
 }
 
 .News {
     margin-top: 200px;
+
+    .News-Cards {
+        flex-direction: column;
+        align-items: center;
+    }
+    .NewsCard {
+        margin-bottom: 100px;
+        width: 50%;
+        .cardImg {
+            img {
+                width: 100%;
+            }
+        }
+    }   
 
     .News-card-name {
         font-weight: 700;
@@ -347,7 +424,8 @@ body {
     margin-top: 200px;
 
     .contact-detail {
-        width: 40%;
+        width: 58%;
+        margin-bottom: 50px;
 
         p {
             color: #9590a8;
@@ -482,10 +560,6 @@ body {
 
 
 @media only screen and (min-width: 300px) and (max-width : 400px) {
-      .swiper-wrapper {
-          width: 77%;
-      }
-
     .navbar{
         .Nav-links , 
         .NavIcons {
@@ -496,6 +570,14 @@ body {
             width: 35px;
             margin-top: -5px;
         }
+
+        .MenuIcon {
+            display: block;
+        }
+    }
+
+    .open-side {
+        width: 95%;
     }
 
     .home-page {
@@ -604,6 +686,8 @@ body {
         }
     }
 
+    
+
     .Trending, .our-products, .News, .feed {
         h2 {
             font-size: 36px;
@@ -666,13 +750,6 @@ body {
 
 
 @media screen and (min-width: 400px) and (max-width : 600px){
-    .swiper-container {
-        width: 640px;
-      }
-      .swiper-wrapper {
-          width: 67%;
-      }
-
     .navbar{
         .Nav-links , 
         .NavIcons {
@@ -682,6 +759,10 @@ body {
         .Nav-icon {
             width: 35px;
             margin-top: -5px;
+        }
+
+        .MenuIcon {
+            display: block;
         }
     }
 
@@ -716,6 +797,29 @@ body {
                 height: auto;
                 margin: 0 auto 20px auto;
 
+            }
+        }
+    }
+
+    .Trending, .our-products {
+        .product-card {
+            .product-img {
+                .btn {
+                    left: -2px;
+                }
+    
+                img {
+                    width: 280px;
+                    height: 170px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+    
+            .card-text {
+                width: 280px;
+                margin-left: auto;
+                margin-right: auto;
             }
         }
     }
@@ -838,13 +942,7 @@ body {
 }
   
   @media screen and (min-width: 600px) and (max-width : 768px){
-    .swiper-container {
-        width: 640px;
-      }
-      .swiper-wrapper {
-          width: 60%;
-      }
-  
+
       .navbar{
           .Nav-links , 
           .NavIcons {
@@ -855,6 +953,10 @@ body {
               width: 35px;
               margin-top: -5px;
           }
+
+          .MenuIcon {
+            display: block;
+        }
       }
   
       .home-page {
@@ -891,8 +993,31 @@ body {
               }
           }
       }
+
+      .Trending, .our-products {
+        .product-card {
+            .product-img {
+                .btn {
+                    left: -2px;
+                }
+    
+                img {
+                    width: 320px;
+                    height: 170px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+    
+            .card-text {
+                width: 320px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    }
   
-      .News {
+    .News {
   
           .News-Cards {
               flex-direction: column;
@@ -1008,4 +1133,194 @@ body {
           }
       }
 }
+
+@media screen and (min-width: 768px) and (max-width : 992px) {
+    .navbar{
+        .Nav-links , 
+        .NavIcons {
+            display: none;
+        }
+
+        .Nav-icon {
+            width: 35px;
+            margin-top: -5px;
+        }
+
+        .MenuIcon {
+            display: block;
+        }
+    }
+
+    .home-page {
+        .bg {
+            height: 900px;
+            background-size: cover;
+        }
+
+        .home-page-content {
+            top: 150px;
+            .game-detail {
+                width: 93%;
+                order: 2;
+                margin: 20px auto 0 auto; 
+
+                h1 {
+                    margin-left: 5px;
+                }
+
+                p {
+                    margin-top: 10px;
+                }
+    
+                .btn {
+                    width: 100px;
+                }
+            }
+            .game-promo {
+                order: 1;
+                width: 90%;
+                height: auto;
+                margin: 0 auto 20px auto;
+
+            }
+        }
+    }
+
+    .News {
+  
+        .News-Cards {
+            flex-direction: column;
+            align-items: center;
+        }
+        .NewsCard {
+            margin-bottom: 100px;
+            width: 90%;
+            .cardImg {
+                img {
+                    width: 100%;
+                }
+            }
+
+            .News-card-information {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .game-genre-container {
+                margin-left: 2px;
+                margin-top: -5px;
+            }
+        }
+    
+        .News-card-des {
+            font-size: 14px;
+            width: 380px;
+            margin-top: 30px;
+        }
+    }
+
+    .contact {
+        flex-direction: column;
+        align-items: center;
+        .contact-detail {
+            width: 95%;
+
+            .contact-icons {
+                width: 40%;
+            }
+        }
+    
+        .contact-form {
+            margin-top: 50px;
+            width: 95%;
+            
+            .inputName, .inputEmail {
+                width: 95%;
+                margin: 0 0 20px 0;
+            }
+    
+            textarea {
+                width: 95%;
+                margin-left: 0px;
+            }
+    
+            .submit {
+                width: 30%;
+                margin-left: 0px;
+            }
+        }
+    }
+
+    .feed {
+      
+        p {
+            width: 95%;
+            font-size: 14px;
+        }
+    
+        .Feed-cards {
+            margin-top: 100px;
+            flex-direction: column;
+            align-items: center;
+
+            .Feed-card {
+                width: 70%;
+                height: 250px;
+                margin-bottom: 50px;
+        
+                .Feed-card-img {
+                    background-color: #373443;
+                    width: 80px;
+                    height: 80px;
+                    border-radius: 40px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+        
+                .Feed-card-des {
+                    color: #9590a8;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width : 1200px) {
+    .home-page {
+        .bg {
+            height: 1000px;
+            background-size: cover;
+        }
+
+        .home-page-content {
+            top: 150px;
+            .game-detail {
+                width: 78%;
+                order: 2;
+                margin: 20px auto 0 auto; 
+
+                h1 {
+                    margin-left: 5px;
+                }
+
+                p {
+                    margin-top: 10px;
+                }
+    
+                .btn {
+                    width: 100px;
+                }
+            }
+            .game-promo {
+                order: 1;
+                width: 75%;
+                height: auto;
+                margin: 0 auto 20px auto;
+
+            }
+        }
+    }
+}
+
 

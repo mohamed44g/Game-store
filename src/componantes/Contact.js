@@ -3,7 +3,7 @@ import React from "react";
 export default function Contact() {
     return (
         <div className="container">
-            <div className="contact d-flex justify-content-between flex-wrap">
+            <div className="contact d-flex flex-column align-items-center">
                 <div className="contact-detail">
                     <h2>Contact Us</h2>
                     <p className="mt-4">After moved, male won't Moveth moveth fruitful don't forth you bearing morning made male without life be blessed rule stars divided two. Firmament of, him she'd good of his morning.</p>

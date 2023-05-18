@@ -1,11 +1,29 @@
-import React from "react";
+import React , {useRef}from "react";
 import Video from "../Video/ASSASSIN'S CREED VALHALLA- LAUNCH TRAILER.mp4";
 import Img from "../Images/stretched-1920-1080-1077274.jpg";
 
 
 function HomePage() {
+
+    const ref = useRef('')
+
+    function closeMenu () {
+        ref.current.classList.remove("open-side");
+        document.body.style.overflowY = "visible"
+    }
+
     return (
         <div className="home-page">
+            <div ref={ref} id="mySidenav" className="sidenav">
+                    <div className="side-content">
+                        <div className="closebtn" onClick={closeMenu}>&times;</div>
+                        <a href="#_">Home</a>
+                        <a href="#_">Features</a>
+                        <a href="#_">Pricing</a>
+                        <a href="#_">Disabled</a>
+                    </div>
+            </div>
+
             <div className="bg"></div>
             <div className="home-page-content container">
                 <div className="game-detail u--fadeInLeft">

@@ -26,28 +26,33 @@ function Trending() {
         <div className="Trending">
             <h2>Trending</h2>
 
-            <div className="container">
-                <div className="cards">
+            
+                <div className="container">
                     <Swiper
                         freeMode = {true}
                         grabCursor = {true}
-                        spaceBetween={50}
                         modules={[FreeMode , Navigation]}
                         navigation = {{ clickable: true }}
-                        slidesPerView={4}
+                        className="swiper"
                         breakpoints={{
-                            // when window width is >= 640px
                             300: {
                                 slidesPerView: 1,
                             },
-                            // when window width is >= 768px
+                        
                             768: {
-                                width: 768,
                                 slidesPerView: 2,
                             },
+
+                            992: {
+                                slidesPerView: 3,
+                                spaceBetween : 50,
+                            },
+
+                            1200: {
+                                slidesPerView: 4,
+                                spaceBetween : 50,
+                            },
                         }}
-                        
-                        className="swiper d-flex justify-content-center"
                     >
                         { data.map(ele => 
                         <SwiperSlide key={ele.id}><Card productTitle = {ele.title}
@@ -59,7 +64,6 @@ function Trending() {
                     </Swiper>
                 </div>
             </div>
-        </div>
     );
 }
 

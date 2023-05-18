@@ -1,37 +1,47 @@
 import React from "react";
+import Menu from "../Images/icons8-menu-96 (6).png";
 
 export function NavPar() {
+
+    function openMenu () {
+        let ele = document.querySelector('.sidenav');
+        ele.classList.add("open-side");
+        document.body.style.overflowY = "hidden";
+    }
+    
     return (
         <div className='navbar'>
             <div className="Nav-container">
-                <div className="row">
-                    <div className="col-lg-1 col-2">
-                        <a className="navbar-brand" href="_">
-                            <img className = "Nav-icon" src='https://html.nkdev.info/monsterplay/assets/images/logo-gamer.svg' alt='Nav-icon'/>
-                        </a>
-                    </div>
+                <div className="d-flex justify-content-between">
+                    <div className="d-flex">
+                        <div className="Logo">
+                            <a className="navbar-brand" href="_">
+                                <img className = "Nav-icon" src='https://html.nkdev.info/monsterplay/assets/images/logo-gamer.svg' alt='Nav-icon'/>
+                            </a>
+                        </div>
 
 
-                    <div className="col-lg-9 col-0">
-                        <div className="Nav-links">
-                            <ul className="navbar-links-ul">
-                                <li className="nav-item">
-                                    <a className="nav-link active" aria-current="page" href="_">Home</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="_">Features</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link" href="_">Pricing</a>
-                                </li>
-                                <li className="nav-item">
-                                    <a className="nav-link disabled" href="_">Disabled</a>
-                                </li>
-                            </ul>
+                        <div className="Links">
+                            <div className="Nav-links">
+                                <ul className="navbar-links-ul">
+                                    <li className="nav-item">
+                                        <a className="nav-link active" aria-current="page" href="_">Home</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="_">Features</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link" href="_">Pricing</a>
+                                    </li>
+                                    <li className="nav-item">
+                                        <a className="nav-link disabled" href="_">Disabled</a>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
-                    <div className="col-lg-2 col-sm-8">
+                    <div className="d-flex">
                         <ul className="NavIcons">
                             <li>
                                 <svg className="icon" width='30' viewBox="0 0 24 24"  xmlns="http://www.w3.org/2000/svg">
@@ -52,7 +62,9 @@ export function NavPar() {
                                 </svg>
                             </li>
                         </ul>
+                        <img className = "MenuIcon" src = {Menu} alt = "MenuIcon" onClick={openMenu}/>
                     </div>
+
                 </div>
             </div>
     </div>
@@ -63,31 +75,35 @@ export function NavPar() {
 export function Card(props) {
     return (
         <div className="product-card">
-            <div className="product-img">
-                <img src={props.CardImg} alt = {`${props.productTitle}`} />
-                <button className="btn">Buy</button>
-            </div>
+            <div className="card-content mx-auto">
+                <div className="product-img">
+                    <img src={props.CardImg} alt = {`${props.productTitle}`} />
+                    <button className="btn">Buy</button>
+                </div>
 
-            <h4 className="product-title">{props.productTitle}</h4>
-            <span className="game-rating d-flex">
-                <svg className="icon" width= '13' viewBox="0 0 24 24" stroke="currentColor" fill="#fff" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
-                </svg>
-                <svg className="icon" width= '13' viewBox="0 0 24 24" stroke="currentColor" fill="#fff" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
-                </svg>
-                <svg className="icon" width= '13' viewBox="0 0 24 24" stroke="currentColor" fill="#fff" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
-                </svg>
-                <svg className="icon" width= '13' viewBox="0 0 24 24" stroke="currentColor" fill="#fff" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
-                </svg>
-                <svg className="icon" width= '13' viewBox="0 0 24 24" stroke="currentColor" fill="#fff" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
-                </svg>
-            </span>
-            <div className="mt-2 prices">
-                <span className="price">{`${props.price}$`}</span> <span className="discount">{`${props.discount}$`}</span>
+                <div className="card-text ml-1">
+                    <h4 className="product-title">{props.productTitle}</h4>
+                    <span className="game-rating d-flex">
+                        <svg className="icon" width= '13' viewBox="0 0 24 24" stroke="currentColor" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
+                        </svg>
+                        <svg className="icon" width= '13' viewBox="0 0 24 24" stroke="currentColor" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
+                        </svg>
+                        <svg className="icon" width= '13' viewBox="0 0 24 24" stroke="currentColor" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
+                        </svg>
+                        <svg className="icon" width= '13' viewBox="0 0 24 24" stroke="currentColor" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
+                        </svg>
+                        <svg className="icon" width= '13' viewBox="0 0 24 24" stroke="currentColor" fill="#fff" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"></path>
+                        </svg>
+                    </span>
+                    <div className="mt-2 prices">
+                        <span className="price">{`${props.price}$`}</span> <span className="discount">{`${props.discount}$`}</span>
+                    </div>
+                </div>
             </div>
         </div>
     )
